@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>FortuneTeller -Result</title>
+{% endblock%}
+{% block body %}
+<div class = 'result'>
+    <h1>This is your result</h1>
+    <div class = "your-input">
+    <h2>Hello, {{result.name}}  !!</h2>
+    <h2>Your choice: {{result.number}} & {{result.color}}</h2>
+    </div>
+    
+</div>
+<div class="Color">
+    {% if result.color == "red"%}
+        <img id="color" src="{{ url_for('static',filename= '/images/red.jpg')}}">
+    {% elif result.color == "yellow" %}
+    <img id="color" src="{{ url_for('static',filename= '/images/yellow.jpg')}}">
+    {% elif result.color == "blue" %}
+    <img id="color" src="{{ url_for('static',filename= '/images/blue.jpg')}}">
+    {% elif result.color == "green" %}
+    <img id="color" src="{{ url_for('static',filename= '/images/green.jpg')}}">
+    {% endif %} 
+</div>
+    <div class = "message">
+    <p id="message"></p>
+    <script>
+        const messages = ["Good fortune is yours!","Someone is thinking of you.","Welcome change.","You will have good luck today!","Good news will come to you by text.","New ideas could be profitable.","Others can help you now.","Soon life will become more interesting."]
+        const messageNo = Math.floor( Math.random() * messages.length);
+        document.getElementById("message").innerHTML = messages[messageNo];
+    </script>
+    </div>
+{% endblock %}

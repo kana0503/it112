@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>FortuneTeller</title>
+{% endblock%}
+{% block body %}
+
+    <h1>Tell FortuneTeller about your imformation</h1>
+    <form method="POST" action="/fortune" >
+        <div class="form">
+        <label for="namer">Input your name</label>
+        <input type="text" name="user" id="name">
+        <label for="color">Choose color</label>
+        <select name="color" id="color">
+            <option value="">--select color--</option>
+            <option>red</option>
+            <option>yellow</option>
+            <option>blue</option>
+            <option>green</option>
+        </select>
+        <label for="number">Choose number</label>
+        <select name="number" id="number">
+            <option value="">--select number--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+            <button type="submit" class = "button" id="form-submit"><b>submit</b></button>
+    </form>
+
+    <div class="FortuneTeller-img">
+    <img class="FortuneTeller" src="{{ url_for('static',filename= '/images/FortuneTeller.jpg')}}">
+    </div>
+    <script>
+        document.getElementById('form-submit').onclick = function(){
+            const name = document.getElementById('name').value;
+            const color = document.getElementById('color').value;
+            const number = document.getElementById('number').value;
+
+            var error = 0;
+            if(name.length == 0){alert('Name field required'); error += 1; }
+            if(color.length == 0){alert('Color field required'); error += 1;}
+            if(number.length == 0){alert('Number field required'); error += 1;}
+
+            var colorImage = document.getElementById("colorImage");
+            switch(color){
+                case"red":
+                colorImage.innerHTML =  "<img src='{{ url_for('static',filename= '/images/red.jpg')}}''>";
+                break;
+                case"yellow":
+                colorImage.innerHTML =  "<img src='{{ url_for('static',filename= '/images/yellow.jpg')}}''>";
+                break;
+                case"blue":
+                colorImage.innerHTML =  "<img src='{{ url_for('static',filename= '/images/blue.jpg')}}''>";
+                break;
+                case"green":
+                colorImage.innerHTML =  "<img src='{{ url_for('static',filename= '/images/green.jpg')}}''>";
+                break;
+            }
+            if(error > 0){window.location.href = 'index.html'}
+        }
+
+    </script>
+{% endblock %}

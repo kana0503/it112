@@ -1,0 +1,94 @@
+h1 {
+    background-color:lightsteelblue;
+    text-align: center;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+.form {
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  
+}
+
+form{
+    text-align: center;
+}
+
+ footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.FortuneTeller{
+    width: 30%;
+}
+
+.FortuneTeller-img img{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.FortuneTeller-img {
+background-color: 	#6D848C;
+}
+
+.your-input{
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+    display: grid;
+}
+
+.button{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ButtonColor*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    margin: 1em 1em;
+}
+.button:active {/*OnClick*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*Move down*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*Reduce Shadow*/
+    border-bottom: none;
+}
+ 
+.Color img{
+    display: block;
+    max-width: 40%;
+    margin: auto;
+}
+
+.message {
+    background-color: aquamarine;
+    text-align: center;
+}   
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 5em;
+    margin-right: 5em;
+}
